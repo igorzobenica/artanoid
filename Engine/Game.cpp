@@ -25,7 +25,7 @@ Game::Game(MainWindow& wnd)
 	:
 	wnd(wnd),
 	gfx(wnd),
-	ball(Vec2(200.0f, 200.0f), Vec2(-1.0f, -1.0f)),
+	ball(Graphics::GetScreenRect().GetCenter(), Vec2(0.0f, 1.5f)),
 	walls(RectF::FromCenter(Graphics::GetScreenRect().GetCenter(), fieldWidht / 2.0f, fieldHeight /2.0f), wallThickness, wallColor),
 	soundPad(L"Sounds\\arkpad.wav"),
 	soundBrick(L"Sounds\\arkbrick.wav"),
