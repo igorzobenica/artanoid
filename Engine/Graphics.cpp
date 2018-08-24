@@ -382,7 +382,7 @@ void Graphics::DrawIsoRightTriBL(int x, int y, int size, Color c)
 	for (int i = y; i < y + size; i++)
 	{
 		const int cur_line = i - y;
-		for (int j = x; j < x + size + cur_line; j++)
+		for (int j = x; j < x + cur_line; j++)
 		{
 			PutPixel(j, i, c);
 		}
