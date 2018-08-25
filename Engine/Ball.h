@@ -6,10 +6,17 @@
 class Ball
 {
 public:
+	enum WallCollisionResult
+	{
+		NoCollision,
+		WallCollision,
+		BottomCollision
+	};
+public:
 	Ball(const Vec2& in_pos, const Vec2& in_dir);
 	void Draw(Graphics& gfx) const;
 	void Update(float dt);
-	int DoWallCollision(const RectF& walls);
+	WallCollisionResult DoWallCollision(const RectF& walls);
 	void ReboundX();
 	void ReboundY();
 	RectF GetRect() const;

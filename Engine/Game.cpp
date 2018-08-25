@@ -106,13 +106,13 @@ void Game::UpdateModel(float dt)
 			soundPad.Play();
 		}
 
-		const int ballWallColResult = ball.DoWallCollision(walls.GetInnerBounds());
-		if (ballWallColResult == 1)
+		const Ball::WallCollisionResult ballWallColResult = ball.DoWallCollision(walls.GetInnerBounds());
+		if (ballWallColResult == Ball::WallCollisionResult::WallCollision)
 		{
 			pad.ResetCooldown();
 			soundPad.Play();
 		}
-		else if (ballWallColResult == 2)
+		else if (ballWallColResult == Ball::WallCollisionResult::BottomCollision)
 		{
 			gameIsOver = true;
 			soundByeball.Play();
